@@ -3,3 +3,21 @@
     font-size: 25px;
     font-weight: 500;
 }
+.center{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+justify-content: center;
+width:80%;
+height: 20%;
+margin: 1px auto;
+}
+.margin{
+   margin: 10px auto;
+   width: 70vw;
+   align-items: center;
+   border-radius: 10px;
+box-shadow: 0 0 5px black;
+margin-top: 0;
+}
