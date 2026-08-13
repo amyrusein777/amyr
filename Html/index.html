@@ -1,53 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>my project</title>
-    <link rel="stylesheet" href="/materialize/css/materialize.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body>
-    
-    <nav class="white">
-        <div class="nav-wrapper">
-          <a href="#!" class="black-text" id="amir">Nike</a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down black-text">
-            <li><a class="black-text" href="#">Sass</a></li>
-            <li><a class="black-text" href="badges.html">Components</a></li>
-            <li><a class="black-text" href="collapsible.html">Javascript</a></li>
-            <li><a class="black-text" href="mobile.html">Mobile</a></li>
-          </ul>
-        </div>
-      </nav>
-    
-      <ul class="sidenav" id="mobile-demo"  >
-        <li><div class="user-view">
+    <link rel="stylesheet" href="/materialize/css/materialize.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/util.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="white top_navbar z-depth-0">
+      <div class="nav-wrapper">
+        <a
+          href="#!"
+          class="black-text brand-logo show-on-medium-and-down hide-on-med-and-up f-bold"
+          >Nike</a
+        >
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger black-text"
+          ><i class="material-icons">menu</i></a
+        >
+        <ul class="hide-on-med-and-down black-text">
+          <li><a class="black-text" href="/Html/login-page.html">Login</a></li>
+          <li><a class="black-text" href="badges.html"></a></li>
+          <li>
+            <a class="black-text" href="/Html/users.html">User managment</a>
+          </li>
+          <li><a class="black-text" href="mobile.html">Mobile</a></li>
+          <li><a class="black-text" href="mobile.html">Home</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+      <li>
+        <div class="user-view">
           <div class="background">
-            <img src="/images/aks1.jpg">
+            <img src="/images/aks1.jpg" />
           </div>
-          <a href="#user"><img class="circle" src="/images/aks3.png"></a>
-          <a href="#name"><span class="black-text name">amyru3ein</span></a>
-          <a href="#email"><span class="black-text email">amyru3ein@gmail.com</span></a>
-        </div></li>
-        <li><a href="#!"><i class="material-icons ">devices</i>your device</a></li>
-       
-        <li><div class="divider"></div></li>
-        <li><a class="subheader">options</a></li>
-        <li><a class="waves-effect" href="https://youtube.com" target="_blank">codeyad website</a></li>
-         <li><a href="https://codeyad.com">youtube channel</a></li>
-      </ul>
+          <a href="#user"><img class="circle" src="/images/aks3.png" /></a>
+          <a><span class="black-text name">amyru3ein</span></a>
+          <a><span class="black-text email">amyru3ein@gmail.com</span></a>
+        </div>
+      </li>
+      <li>
+        <a href="#!"><i class="material-icons">devices</i>your device</a>
+      </li>
 
-<section>
-      <img class="center padding" src="/images/logo1.jpg" alt="aks">
-      <a class="waves-effect waves-light btn center margin black">button</a>
-      <a class="waves-effect waves-light btn center margin black">button</a>
+      <li><div class="divider"></div></li>
+      <li><a class="subheader">options</a></li>
+      <li><a href="/Html/login-page.html">Login</a></li>
+      <li>
+        <a class="waves-effect" href="https://codeyad.com" target="_blank"
+          >codeyad website</a
+        >
+      </li>
+      <li><a href="https://youtube.com" target="_blank">youtube channel</a></li>
+    </ul>
 
+    <section class="flex-c-m flex-col p-r-20 p-l-20 p-t-100 sizefull">
+      <img class="w-full max-w-300 filter_shadow" src="/images/logo1 (1).png" />
+      <a
+        href="/Html/users.html"
+        class="waves-effect waves-light btn black w-full max-w-400 m-t-40 mb-10 rounded_pill"
+        >User managment</a
+      >
+      <a
+        class="waves-effect waves-light btn black w-full m-t-20 w-full max-w-400 rounded_pill"
+        >button</a
+      >
     </section>
     <script src="/materialize/js/materialize.min.js"></script>
     <script src="/materialize/js/apps.js"></script>
-</body>
+    <script src="/materialize/js/users.js"></script>
+  </body>
 </html>

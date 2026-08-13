@@ -1,23 +1,59 @@
-#amir{
-    margin-left: 20px;
-    font-size: 25px;
-    font-weight: 500;
+.list.active .arrow {
+  transform: rotate(180deg);
+  color: #616161;
 }
-.center{
-   
+.list.active {
+  background: #f5f5f5;
+}
+/* .collapsible-header{
+   background: #fafafa ;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.33);
+} */
+
+@media (min-width: 600px) {
+  .nav-wrapper {
+    box-shadow: 0 0 20px #e0e0e0;
+  }
+  #top-action-section {
     display: flex;
-    flex-direction: column;
     align-items: center;
-justify-content: center;
-width:80%;
-height: 20%;
-margin: 1px auto;
+  }
+  /* .vasat{
+      left: 42vw;
+    position:fixed;
+    font-size: 25px;
+        font-weight: 500;
+     
+    }
+     */
 }
-.margin{
-   margin: 10px auto;
-   width: 70vw;
-   align-items: center;
-   border-radius: 10px;
-box-shadow: 0 0 5px black;
-margin-top: 0;
+table.highlight > tbody > tr:hover {
+  background-color: #e0e0e0;
+}
+.container {
+  width: 100%;
+}
+
+.add-user-modal-back {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 999;
+}
+.add-user-modal {
+  position: fixed;
+  background: white;
+  height: 70vh;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  bottom: -70vh;
+}
+.add-user-modal.show {
+  box-shadow: 0 0 20px gray;
+  bottom: 0;
 }

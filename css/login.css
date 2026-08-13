@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/back2.jpg) center/cover no-repeat;
+}
+
+
+
+form {
+    width: clamp(360px, 20%, 400px);
+    height: clamp(300px, 70%, 400px);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 20px white;
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+}
+
+h1 {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    color: white;
+}
+
+.input1 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0 auto;
+  margin-top: -60px;
+    /* transform: translatex(-25%); */
+    gap: 20px;
+    width: 190px;
+    transition: 0.5s;
+}
+
+.input2 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0 auto;
+  margin-top: 40px;
+   
+   
+}
+
+#text {
+
+    border: 2px solid white;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    position: relative;
+    outline: none;
+}
+
+#pass {
+
+    border: 2px solid white;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    position: relative;
+    outline: none;
+}
+
+.name {
+    bottom: 2px;
+    position: absolute;
+    color: white;
+    transition: 0.7s;
+
+}
+
+.pass {
+    position: absolute;
+    bottom: 2px;
+    color: white;
+    transition: 0.7s;
+}
+
+.check {
+    position: absolute;
+    bottom: clamp(60px, 25%, 140px);
+    color: rgba(255, 255, 255, 0.87);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+   }
+
+.ahan {
+    color: rgb(255, 255, 255);
+}
+
+.input1 :focus+.name,
+.input1 input:valid+label {
+    transform: translateY(-10%);
+    top: -20px;
+    outline: none;
+    border: none;
+    transition: transform 0.3s linear ;
+}
+
+.icon {
+    top: -10px;
+    left: 85%;
+    position: absolute;
+    color: white;
+}
+
+.icon2 {
+    position: absolute;
+    left: 85%;
+    top: -10px;
+    color: white;
+}
+
+.input2 :focus+.pass,
+.input2 input:valid+label {
+    transform: translateY(-10%);
+    top: -20px;
+    outline: none;
+    border: none;
+    transition: transform 0.3s linear ;
+}
+
+.button {
+    position: absolute;
+    bottom: 10px;
+    width: 70%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+button {
+    width: 100%;
+    height: clamp(20px, 50%, 70px);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 20px;
+    transition: 0.5s ease;
+    box-shadow: 0 0 5px white;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+}
+
+button:active{
+    transform: scale(0.9);
+    color: aqua;
+    background: gray;
+}
+
+@media (hover:hover){
+    button:hover{
+         transform: scale(0.9);
+        color: aqua;
+        background: gray;
+        box-shadow: 0 0 15px white;
+
+}}
+
+input {
+    color: white;
+}
+
+input:focus {
+    transform: scale(1.2);
+}
+
+p {
+    text-align: center;
+    color: white;
+}
+
+p a {
+    color: white;
+    font-weight: 900;
+}
+@media (max-width:600px) {
+form{
+        top: -10%;
+        width: 70vw;
+        height: 50vh;
+        backdrop-filter: blur(10px);
+    }
+.input1{
+    width: 200px;
+    
+}
+.input2{
+    width: 200px;
+    
+}
+.check{
+font-size: 13px;
+}
+p{
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+}
+}
