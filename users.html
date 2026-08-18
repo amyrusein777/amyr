@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user page</title>
+    <link rel="stylesheet" href="assest/materialize/Css/materialize.min.css">
+    <link rel="stylesheet" href="assest/css/style.css">
+    <link rel="stylesheet" href="assest/css/util.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body x-data="usersdata">
+
+<!-- ______nav-section_____start=>________________ -->
+
+    <nav class="white top_navbar z-depth-0">
+        <div class="nav-wrapper ">
+          <a href="#!" class="black-text brand-logo hide-on-med-and-up show-on-medium-and-down" >User manage</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
+          <ul class="hide-on-med-and-down black-text ">
+            <li><a class="black-text" href="../index.html">Home page</a></li>
+            <li><a class="black-text" href="badges.html">Login</a></li>
+            <li><a class="black-text" href="collapsible.html">About</a></li>
+            <li><a class="black-text" href="mobile.html">Mobile</a></li>
+            <li><a class="black-text" href="mobile.html">Home</a></li>
+          </ul>
+        </div>
+      </nav>
+<!-- ______________nav-section_________ End=>______ -->
+
+
+
+<!-- ______________side-nav____________Start=>_______ -->
+
+      <ul class="sidenav" id="mobile-demo"  >
+        <li><div class="user-view">
+          <div class="background">
+            <img src="assest/images/aks1.jpg">
+          </div>
+          <a href="#user"><img class="circle" src="assest/images/aks3.png"></a>
+          <a><span class="black-text name">amyru3ein</span></a>
+          <a ><span class="black-text email">amyru3ein@gmail.com</span></a>
+        </div></li>
+        <li><a href="#!"><i class="material-icons ">devices</i>your device</a></li>
+       
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">options</a></li>
+        <li><a href="/Html/login-page.html">Login</a></li>
+        <li><a class="waves-effect" href="/index.html">Home page</a></li>
+        <li><a class="waves-effect" href="https://codeyad.com" target="_blank">codeyad website</a></li>
+         <li><a href="https://youtube.com">youtube channel</a></li>
+      </ul>
+<!-- ______________side-nav_________ End=>______ -->
+
+
+
+<!-- ________________top-section_________Start=>_______-->
+
+<section id="top-action-section" class="row m-b-0 m-t-5 container">
+        <div class="  col s12 m8 l8 ">
+<button id="add_user_button" class="waves-effect waves-light btn black p-l-30 p-r-30  w-full rounded_pill flex-c" x-on:click="showaddmodal = true">
+
+<i class="material-icons m-r-5">add</i>
+Add user
+</button>
+        </div>
+
+        <div class="row col s12 m4 l4 m-b-3" id="input">
+             <div class="input-field col s12" x-init="$watch('searchbar',(value)=>handlesearch(value))">
+              
+                  <input id="search" type="text" class="validate" x-model="searchbar">
+                  <label for="search"><i class="material-icons pos-relative top-7">search</i>
+                    Search
+                     </label>
+              </div>
+        </div>
+  </section>
+<!-- ________________top-section_________End=>_______-->
+
+
+
+<!-- ___________main-section=>___________Start=>_________ -->
+
+<template x-if="isloading">
+<div class="center-align">
+<div class="preloader-wrapper small active">
+  <div class="spinner-layer spinner-green-only">
+    <div class="circle-clipper left">
+      <div class="circle"></div>
+    </div><div class="gap-patch">
+      <div class="circle"></div>
+    </div><div class="circle-clipper right">
+      <div class="circle"></div>
+    </div>
+  </div>
+</div>
+</div>
+</template>
+      <section class="user_list_section" x-init="getusers()">
+        <ul class="collapsible hide-on-med-and-up ">
+          <template x-for="user in pageusers">
+        <li class="list">
+            <div class="collapsible-header"><i class="material-icons arrow trans-0-2">arrow_drop_down_circle</i>
+              <span x-text="user.name"></span></div>
+            <div class="collapsible-body">
+                <div class="p-all-5">
+                <span class="f-bold">Username :</span>
+                <span x-text="user.username"></span>
+
+            </div>
+            <div class="p-all-5">
+                <span class="f-bold">email :</span>
+                <span x-text="user.email"></span>
+
+            </div>
+            <div class="p-all-5">
+              <span class="f-bold">Adress :</span>
+                <span x-text="user.address.city+'-'+user.address.street"></span>
+ </div>
+            <div class="p-all-5">
+              <span class="f-bold">Edit :</span>
+              <span> 
+                <i class="material-icons orange-text darken-3  pos-relative top-5 hov-pointer m-l-2">edit</i>
+                <i class="material-icons red-text  pos-relative top-5 hov-pointer">delete_forever</i>
+              </span>
+            </div>
+        </div>
+          </li>
+        </template>
+        </ul>
+     
+
+      <div class="hide-on-med-and-down show-on-medium-and-up container">
+        <table class="striped centered highlight ">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Adress</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody class="desktop-table-body">
+            <template x-for="user in pageusers">
+            <tr>
+            <td x-text="user.id"></td>
+            <td x-text="user.name"></td>
+            <td x-text="user.username"></td>
+            <td x-text="user.email"></td>
+            <td x-text="user.address.city+' _ '+ user.address.street+' _ '+ user.address.suite"></td>
+            <td>
+
+              <i class="material-icons orange-text darken-3 m-l-5 hov-pointer">edit</i>
+              <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">delete_forever</i>
+            </td>
+            </tr>
+            </template>
+          </tbody>
+         </table>
+      </div>
+
+     
+      <div class="pagination_container container white p-l-9 p-r-9 p-t-15 p-b-0 flex-sb-m pos-fixed bottom-0 left-0 right-0 z-depth-4 rounded_top_30">
+<div class="pagination_item_counts flex-l p-l-10 flex-l-m p-l-40">
+Showing
+<span class=" m-r-5 max-w-50 pos-relative top-3">
+  <input type="number" class="no-border center-align m-b-0" x-on:change="handlechangeitemscount($el)" :value="itemscount">
+</span>
+of
+<span class="m-l-5 m-r-5" x-text="users.length"></span>
+      </div>
+      <div class="paginations-buttons ">
+        <i class="black material-icons m-l-5 m-r-5 p-r-5 p-l-5 p-t-5 p-b-3 waves-effect waves-light white-text rounded_pill"  X-ON:click="prevpage()">keyboard_arrow_left</i>
+        <i class="black material-icons m-l-5 m-r-5 p-r-5 p-l-5 p-t-5 p-b-3 waves-effect waves-light white-text rounded_pill" X-ON:click="nextpage()">keyboard_arrow_right</i>
+      </div>
+</div>
+    </section>
+
+<!-- ___________main-section=>___________End=>_________ -->
+
+
+
+<!-- _______________modal-section__________Start=>____________ -->
+
+      <div class="add-user-modal-back " x-show="showaddmodal" x-transition.opacity.duration.800ms x-on:click="showaddmodal = false"></div>
+      <div class="add-user-modal container rounded_top_30 trans-0-4" x-bind:class="{'show' : showaddmodal}">
+        <div class="row p-t-10 p-b-10 p-r-40 p-l-40 center-on-small-only">
+          <h5>
+          <i class="material-icons m-r-10 m-l-20 pos-relative top-7">person_add</i>
+          Add User
+          </h5>
+        
+<form>
+  
+    <div class="input-field col s12">
+      <input id="text" type="text" class="validate">
+      <label for="text">Name</label>
+    </div>
+    <div class="input-field col s12">
+      <input id="user" type="text" class="validate">
+      <label for="user">Username</label>
+    </div>
+    <div class="input-field col s12">
+      <input id="email" type="email" class="validate">
+      <label for="email">Email</label>
+    </div>
+   
+    <button
+    type="button" class="waves-effect waves-light btn m-t-40 m-b-10 w-full max-w-350 rounded_pill black ">Submit
+  </button>
+</form>
+     </div>
+      </div>
+
+<!-- _______________modal-section__________End=>____________ -->
+<script src="assest/js/users-controller.js"></script>
+<script src="assest/js/Axios.js"></script>
+      <script defer src="assest/js/alpine.js"></script>
+      <script src="assest/js/users.js"></script>
+      <script src="assest/js/apps.js"></script>
+      <script src="assest/materialize/js/materialize.min.js"></script>
+</body>
+</html>

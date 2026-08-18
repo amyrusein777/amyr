@@ -1,7 +1,7 @@
 {
-    "vscode-pets.petColor": "gray",
+    "vscode-pets.petColor": "white",
     "vscode-pets.petSize": "medium",
-    "vscode-pets.petType": "clippy",
+    "vscode-pets.petType": "cockatiel",
     "vscode-pets.throwBallWithMouse": true,
     "vscode-pets.theme": "none",
     "vscode-pets.position": "explorer"
